@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Solex App Icon Generator</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      margin: 0;
+      padding: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #eeeeee, #d8dadd);
+    }
+
+    .generator {
+      width: min(600px, 100%);
+      padding: 35px;
+      text-align: center;
+      background: white;
+      border-top: 6px solid #f57e20;
+      border-radius: 20px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+    }
+
+    .generator img {
+      width: 180px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      color: #42474c;
+    }
+
+    p {
+      color: #70757a;
+      line-height: 1.6;
+    }
+
+    canvas {
+      width: 192px;
+      height: 192px;
+      margin: 20px auto;
+      border: 1px solid #dddddd;
+      border-radius: 28px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    button {
+      padding: 13px 20px;
+      color: white;
+      background: #f57e20;
+      border: none;
+      border-radius: 9px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #d96712;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="generator">
+
+    <img
+      src="assets/solex-logo.png"
+      alt="Solex Energies"
+    >
+
+    <h1>e-Vidhayalay Icon Generator</h1>
+
+    <p>
+      Generate the application icons required by
+      the e-Vidhayalay manifest.
+    </p>
+
+    <canvas
+      id="previewCanvas"
+      width="512"
+      height="512"
+    ></canvas>
+
+    <div class="buttons">
+      <button onclick="downloadIcon(192)">
+        Download 192 × 192
+      </button>
+
+      <button onclick="downloadIcon(512)">
+        Download 512 × 512
+      </button>
+    </div>
+
+  </main>
+
+  <script>
+    const logo = new Image();
+    logo.src = "assets/solex-logo.png";
+
+    logo.onload = function () {
+      drawIcon(
+        document.getElementById("previewCanvas"),
+        512
+      );
+    };
+
+    function drawIcon(canvas, size) {
+      canvas.width = size;
+      canvas.height = size;
+
+      const context = canvas.getContext("2d");
+
+      // Background
+      const gradient = context.createLinearGradient(
+        0,
+        0,
+        size,
+        size
+      );
+
+      gradient.addColorStop(0, "#ffffff");
+      gradient.addColorStop(0.7, "#f2f2f2");
+      gradient.addColorStop(1, "#dedede");
+
+      context.fillStyle = gradient;
+      context.fillRect(0, 0, size, size);
+
+      // Orange header accent
+      context.fillStyle = "#f57e20";
+      context.fillRect(0, 0, size, size * 0.08);
+
+      // Decorative circle
+      context.beginPath();
+      context.arc(
+        size * 0.82,
+        size * 0.82,
+        size * 0.28,
+        0,
+        Math.PI * 2
+      );
+
+      context.fillStyle = "rgba(245, 126, 32, 0.10)";
+      context.fill();
+
+      // Logo sizing
+      const availableWidth = size * 0.78;
+      const logoRatio = logo.width / logo.height;
+
+      const logoWidth = availableWidth;
+      const logoHeight = logoWidth / logoRatio;
+
+      const logoX = (size - logoWidth) / 2;
+      const logoY = size * 0.27;
+
+      context.drawImage(
+        logo,
+        logoX,
+        logoY,
+        logoWidth,
+        logoHeight
+      );
+
+      // Portal title
+      context.fillStyle = "#4b5055";
+      context.textAlign = "center";
+      context.font = `bold ${size * 0.07}px Arial`;
+
+      context.fillText(
+        "e-VIDHAYALAY",
+        size / 2,
+        size * 0.73
+      );
+
+      // Subtitle
+      context.fillStyle = "#f57e20";
+      context.font = `bold ${size * 0.033}px Arial`;
+
+      context.fillText(
+        "LEARN • DEVELOP • GROW",
+        size / 2,
+        size * 0.81
+      );
+    }
+
+    function downloadIcon(size) {
+      const canvas = document.createElement("canvas");
+
+      drawIcon(canvas, size);
+
+      const downloadLink = document.createElement("a");
+
+      downloadLink.download = `icon-${size}.png`;
+      downloadLink.href = canvas.toDataURL("image/png");
+
+      downloadLink.click();
+    }
+  </script>
+
+</body>
+</html>
