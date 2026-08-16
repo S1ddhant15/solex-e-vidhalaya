@@ -1,3 +1,35 @@
+const CENTRAL_LEARNING_LOGIN = "/solex-digital-portal/index.html?app=learning";
+let courseSession = null;
+try {
+  const central = JSON.parse(sessionStorage.getItem("solexPortalSession") || "null");
+  if (central && Date.now() <= central.expiresAt && central.user?.apps?.includes("learning")) {
+    courseSession = {
+      id: central.user.id,
+      name: central.user.name,
+      department: central.user.department,
+      role: central.user.role
+    };
+    sessionStorage.setItem("evidhayalaySession", JSON.stringify(courseSession));
+  }
+} catch {
+  courseSession = null;
+}
+if (!courseSession) {
+  window.top.location.replace(CENTRAL_LEARNING_LOGIN);
+  throw new Error("Central portal login required.");
+}
+
+const originalStorageGet = Storage.prototype.getItem;
+const originalStorageSet = Storage.prototype.setItem;
+Storage.prototype.getItem = function(key) {
+  const scopedKey = this === window.localStorage && (key === "topconCompleted" || key === "topconResult") ? `${key}:${courseSession.id}` : key;
+  return originalStorageGet.call(this, scopedKey);
+};
+Storage.prototype.setItem = function(key, value) {
+  const scopedKey = this === window.localStorage && (key === "topconCompleted" || key === "topconResult") ? `${key}:${courseSession.id}` : key;
+  return originalStorageSet.call(this, scopedKey, value);
+};
+
 const lessons=[
  {icon:'☀',title:{en:'Introduction to TOPCon Technology',hi:'TOPCon तकनीक का परिचय',gu:'TOPCon ટેકનોલોજીનો પરિચય'},body:{en:'<h2>What is TOPCon?</h2><p>Tunnel Oxide Passivated Contact is a high-efficiency N-type solar-cell technology. A thin tunnel-oxide layer and doped polysilicon contact reduce recombination losses.</p><div class="key-points"><span>Higher conversion efficiency</span><span>Lower degradation</span><span>Better temperature coefficient</span></div>',hi:'<h2>TOPCon क्या है?</h2><p>टनल ऑक्साइड पैसिवेटेड कॉन्टैक्ट उच्च दक्षता वाली N-टाइप सोलर सेल तकनीक है।</p><div class="key-points"><span>उच्च दक्षता</span><span>कम गिरावट</span><span>बेहतर तापमान प्रदर्शन</span></div>',gu:'<h2>TOPCon શું છે?</h2><p>ટનલ ઓક્સાઇડ પેસિવેટેડ કોન્ટેક્ટ ઉચ્ચ કાર્યક્ષમતા ધરાવતી N-ટાઇપ સોલર સેલ ટેકનોલોજી છે.</p><div class="key-points"><span>વધુ કાર્યક્ષમતા</span><span>ઓછું ડિગ્રેડેશન</span><span>સારું તાપમાન પ્રદર્શન</span></div>'}},
  {icon:'▦',title:{en:'Cell Loading & Stringing',hi:'सेल लोडिंग और स्ट्रिंगिंग',gu:'સેલ લોડિંગ અને સ્ટ્રિંગિંગ'},body:{en:'<h2>Cell preparation and stringing</h2><p>Verify cell type, power bin, colour and orientation before loading. Maintain ribbon alignment, soldering temperature, peel strength and cell-gap controls.</p><div class="key-points"><span>Correct cell orientation</span><span>Stable soldering profile</span><span>Zero micro-crack handling</span></div>',hi:'<h2>सेल तैयारी और स्ट्रिंगिंग</h2><p>लोडिंग से पहले सेल प्रकार, पावर बिन, रंग और दिशा की जाँच करें।</p>',gu:'<h2>સેલ તૈયારી અને સ્ટ્રિંગિંગ</h2><p>લોડિંગ પહેલાં સેલ પ્રકાર, પાવર બિન, રંગ અને દિશા ચકાસો.</p>'}},

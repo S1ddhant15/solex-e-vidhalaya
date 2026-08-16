@@ -1,1 +1,56 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Course Certificate</title><link rel="stylesheet" href="learning.css"></head><body class="certificate-page"><div class="certificate-actions"><button onclick="location.href='index.html'">← Dashboard</button><button onclick="window.print()">Download / Print PDF</button></div><main class="certificate"><div class="cert-border"><img src="assets/solex-logo.png" alt="Solex"><small>SOLEX e‑VIDHAYALAY</small><h1>Certificate of Completion</h1><p>This certificate is proudly presented to</p><h2 id="learnerName">Solex Learner</h2><p>for successfully completing the learning programme</p><h3>TOPCon Module Manufacturing</h3><div class="cert-data"><span><b id="certScore">—</b>Assessment Score</span><span><b id="certDate">—</b>Date of Completion</span><span><b id="certId">—</b>Certificate ID</span></div><div class="signatures"><span><i></i>Learning & Development</span><span><i></i>Department Head</span></div><footer>Knowledge powers performance • Learn • Grow • Lead</footer></div></main><script>const session=JSON.parse(sessionStorage.getItem('evidhayalaySession')||'null');const result=JSON.parse(localStorage.getItem('topconResult')||'null');if(!result||!result.passed)location.href='course.html';document.querySelector('#learnerName').textContent=session?.name||'Solex Learner';document.querySelector('#certScore').textContent=result.score+'%';document.querySelector('#certDate').textContent=result.date;document.querySelector('#certId').textContent=result.id;</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Course Certificate</title>
+  <link rel="stylesheet" href="learning.css">
+</head>
+<body class="certificate-page">
+  <div class="certificate-actions">
+    <button onclick="location.href='index.html'">← Dashboard</button>
+    <button onclick="window.print()">Download / Print PDF</button>
+  </div>
+  <main class="certificate">
+    <div class="cert-border">
+      <img src="assets/solex-logo.png" alt="Solex">
+      <small>SOLEX e‑VIDHYALAYA</small>
+      <h1>Certificate of Completion</h1>
+      <p>This certificate is proudly presented to</p>
+      <h2 id="learnerName">Solex Learner</h2>
+      <p>for successfully completing the learning programme</p>
+      <h3>TOPCon Module Manufacturing</h3>
+      <div class="cert-data">
+        <span><b id="certScore">—</b>Assessment Score</span>
+        <span><b id="certDate">—</b>Date of Completion</span>
+        <span><b id="certId">—</b>Certificate ID</span>
+      </div>
+      <div class="signatures">
+        <span><i></i>Learning & Development</span>
+        <span><i></i>Department Head</span>
+      </div>
+      <footer>Knowledge powers performance • Learn • Grow • Lead</footer>
+    </div>
+  </main>
+  <script>
+    const centralLogin = "/solex-digital-portal/index.html?app=learning";
+    let learner = null;
+    try {
+      const central = JSON.parse(sessionStorage.getItem("solexPortalSession") || "null");
+      if (central && Date.now() <= central.expiresAt && central.user?.apps?.includes("learning")) learner = central.user;
+    } catch {
+      learner = null;
+    }
+    if (!learner) {
+      window.top.location.replace(centralLogin);
+      throw new Error("Central portal login required.");
+    }
+    const result = JSON.parse(localStorage.getItem(`topconResult:${learner.id}`) || "null");
+    if (!result || !result.passed) location.replace("course.html#assessment");
+    document.querySelector("#learnerName").textContent = learner.name;
+    document.querySelector("#certScore").textContent = result.score + "%";
+    document.querySelector("#certDate").textContent = result.date;
+    document.querySelector("#certId").textContent = result.id;
+  </script>
+</body>
+</html>

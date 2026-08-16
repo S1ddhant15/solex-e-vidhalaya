@@ -3,7 +3,7 @@
 // Offline access and faster loading
 // ======================================================
 
-const CACHE_NAME = "solex-e-vidhayalay-v1";
+const CACHE_NAME = "solex-e-vidhayalay-v3-central-login";
 
 const OFFLINE_PAGE = "./404.html";
 
@@ -25,7 +25,7 @@ const FILES_TO_CACHE = [
   "./course.js",
   "./admin.js",
 
-  "./manifest.json",
+  "./mainfest.json",
   "./assets/solex-logo.png"
 ];
 
