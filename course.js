@@ -1107,3 +1107,17 @@ if (
 
     showQuiz();
 }
+
+// Register the e-Vidhayalay service worker
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .then(() => {
+        console.log("e-Vidhayalay offline service is active.");
+      })
+      .catch((error) => {
+        console.error("Service worker registration failed:", error);
+      });
+  });
+}
