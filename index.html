@@ -1,48 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solex Digital Operations Portal</title>
-  <link rel="stylesheet" href="assets/portal.css">
-</head>
-<body class="login-page">
-  <main class="login-shell">
-    <section class="login-brand">
-      <img src="assets/solex-logo.png" alt="Solex Energies">
-      <div class="brand-copy">
-        <span>SOLE​X DIGITAL ECOSYSTEM</span>
-        <h1>One platform.<br>Connected operations.</h1>
-        <p>Manufacturing intelligence, maintenance assistance and workforce development—together in one secure workspace.</p>
-      </div>
-      <div class="brand-pills"><b>MES</b><b>SAMA</b><b>e‑Vidhyalaya</b></div>
-    </section>
-
-    <section class="login-panel">
-      <div class="mobile-logo"><img src="assets/solex-logo.png" alt="Solex Energies"></div>
-      <p class="eyebrow">EMPLOYEE ACCESS</p>
-      <h2>Welcome back</h2>
-      <p class="muted">Sign in with your Employee ID and password.</p>
-      <form id="loginForm" autocomplete="on">
-        <label for="employeeId">Employee ID</label>
-        <input id="employeeId" name="employeeId" placeholder="Example: SX1001" autocomplete="username" required>
-        <label for="password">Password</label>
-        <div class="password-wrap">
-          <input id="password" name="password" type="password" placeholder="Enter password" autocomplete="current-password" required>
-          <button type="button" id="togglePassword" aria-label="Show password">Show</button>
-        </div>
-        <button class="primary-btn" type="submit">Sign in to portal</button>
-        <p id="loginMessage" class="form-message" role="alert"></p>
-      </form>
-      <div class="demo-box">
-        <b>Prototype login</b>
-        <span>Admin: SX1001 / Admin@123</span>
-        <span>Maintenance: SX2001 / Maint@123</span>
-      </div>
-      <small class="security-note">Authorised Solex personnel only. Access activity may be monitored.</small>
-    </section>
-  </main>
-  <script src="assets/config.js"></script>
-  <script src="assets/auth.js"></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>e-Vidhayalay Learning Portal</title><link rel="stylesheet" href="style.css"></head><body>
+<aside id="sidebar"><div class="brand"><b>e</b><span><strong>Vidhayalay</strong><small>LEARN • GROW • LEAD</small></span></div><nav><button class="active">⌂ Dashboard</button><button>▶ My Learning</button><button>▦ Course Library</button><button>✓ Assessments <i>2</i></button><button>◇ Certificates</button></nav><div class="support">✦<h4>Learning Support</h4><p>Need help with a course or learning plan?</p><button onclick="alert('Connect this button to your helpdesk or email.')">Get support</button></div><div class="user"><b>ST</b><span><strong>Siddhant Tripathi</strong><small>Operations Excellence</small></span></div></aside>
+<main><header><button id="menu">☰</button><label>⌕ <input id="search" placeholder="Search courses, skills or topics..."></label><span class="notify">♢</span><button class="help">? Help</button></header><div class="page">
+<section class="hero"><div><small>FRIDAY, 15 AUGUST</small><h1>Namaste, Siddhant 👋</h1><h2>Ready to learn something new today?</h2><div class="streak">🔥 <span><b>7 day learning streak!</b><small>Keep going — you are building a great habit.</small></span></div></div><div class="art">✦<span>⌁</span></div></section>
+<section class="stats"><article>▶ <span>Courses in progress<b>2</b><small>↑ 1 this month</small></span></article><article>◷ <span>Learning hours<b>18.5</b><small>Across 6 courses</small></span></article><article>✓ <span>Courses completed<b>4</b><small>2 certificates earned</small></span></article><article>✦ <span>Skill points<b>1,240</b><small>Top 15% of learners</small></span></article></section>
+<div class="heading"><span><small>CONTINUE LEARNING</small><h2>Pick up where you left off</h2></span><button>View my learning →</button></div><section class="continue"><article><div class="visual solar">☀<small>TECHNICAL</small></div><div class="info"><small>Intermediate · Lesson 8 of 12</small><h3>Solar Module Manufacturing</h3><p>Quality control in lamination process</p><div class="bar"><i style="width:68%"></i></div><button onclick="alert('Resuming Solar Module Manufacturing')">▶ Resume course · 68%</button></div></article><article><div class="visual lean">↗<small>OPERATIONS</small></div><div class="info"><small>Beginner · Lesson 3 of 9</small><h3>Lean Manufacturing Essentials</h3><p>Identifying the eight wastes</p><div class="bar"><i style="width:35%"></i></div><button onclick="alert('Resuming Lean Manufacturing Essentials')">▶ Resume course · 35%</button></div></article><article class="goal"><div class="ring">72%</div><h3>Weekly learning goal</h3><p><b>3h 36m</b> of 5 hours</p><div>✓ ✓ ✓ ✓ ✓ S S</div><small>1h 24m left — you've got this!</small></article></section>
+<div class="heading library-head"><span><small>EXPLORE & GROW</small><h2>Recommended for you</h2></span><select id="category"><option>All</option><option>Technical</option><option>Operations</option><option>Digital</option><option>Safety</option><option>Quality</option><option>Leadership</option></select></div><section id="courses" class="courses"></section>
+</div></main><script src="script.js"></script></body></html>
