@@ -9,6 +9,10 @@ Static GitHub Pages prototype for Solex Energies Learning & Development.
 - `portal.css` — styling
 - `theme.css` — Solex orange, charcoal and grey live theme
 - `assets/solex-logo.png` — official Solex logo
+- `course.html` / `course.js` — multilingual TOPCon lessons, progress and quiz
+- `certificate.html` — printable completion certificate
+- `admin.html` / `admin.js` — prototype course management
+- `learning.css` — learning, admin and certificate styling
 - `auth.js` — demonstration users and login validation
 - `portal.js` — courses, search, navigation and logout
 
@@ -31,6 +35,7 @@ Static GitHub Pages prototype for Solex Energies Learning & Development.
 
 - Users: `auth.js`
 - Courses and progress: `portal.js`
+- TOPCon lesson content and quiz answers: `course.js`
 - Branding/content: `login.html` and `index.html`
 - Colors/layout: `portal.css`
 

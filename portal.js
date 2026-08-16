@@ -21,6 +21,11 @@ render();
 search.addEventListener("input",render);
 category.addEventListener("change",render);
 document.querySelectorAll("nav button").forEach(button=>button.addEventListener("click",()=>{
+  const view=button.dataset.view;
+  if(view==="admin"){window.location.href="admin.html";return;}
+  if(view==="assessment"){window.location.href="course.html#assessment";return;}
+  if(view==="certificate"){window.location.href="certificate.html";return;}
+  if(view==="learning"){window.location.href="course.html";return;}
   document.querySelectorAll("nav button").forEach(item=>item.classList.remove("active"));
   button.classList.add("active");
   document.querySelector("#sectionTitle").textContent=button.innerText.replace("2","").trim();
@@ -41,5 +46,6 @@ document.querySelectorAll(".kpis b[data-value]").forEach(element=>{
 });
 
 function openCourse(title){
-  const toast=document.querySelector("#toast");toast.textContent=title+" opened";toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),2200);
+  if(title.includes("TOPCon")){window.location.href="course.html";return;}
+  const toast=document.querySelector("#toast");toast.textContent=title+" will be available soon";toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),2200);
 }
