@@ -1,1 +1,0 @@
-# solex-e-vidhalaya
