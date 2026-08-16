@@ -1,1 +1,1066 @@
-:root{--orange:#f47a20;--charcoal:#25282c;--grey:#eceef1;--line:#d9dde2}*{box-sizing:border-box}.learning-page{margin:0;background:#eef0f3;font-family:Segoe UI,Arial;color:#2c3035}.lesson-sidebar{position:fixed;inset:0 auto 0 0;width:300px;background:#202327;color:#fff;overflow:auto}.course-brand{background:#fff;padding:14px;display:flex;align-items:center;justify-content:space-between}.course-brand img{width:130px}.course-brand button{border:0;background:none;color:#555}.course-summary{padding:24px;border-bottom:1px solid #ffffff18}.course-summary small{color:#f99b56;font-weight:700}.course-summary h2{font-size:19px}.course-progress{height:7px;border-radius:5px;background:#ffffff20;overflow:hidden}.course-progress i{display:block;height:100%;width:0;background:var(--orange);transition:.4s}.course-summary p{font-size:11px;color:#bbb}.lesson-list button,.quiz-link{width:100%;border:0;border-bottom:1px solid #ffffff10;background:none;color:#dfe2e5;padding:16px 18px;text-align:left;display:flex;gap:12px;align-items:center}.lesson-list button.active{background:#f47a20;color:#fff}.lesson-list button.done:before{content:'✓';color:#5dd18b}.lesson-list button:not(.done):before{content:'○'}.quiz-link{background:#30343a;margin-top:10px}.lesson-main{margin-left:300px}.lesson-header{margin:0;height:85px;border-radius:0;border-top:4px solid var(--orange)}.lesson-header h1{font-size:22px}.lesson-header small{color:#f47a20}.lesson-header select{margin-left:auto;padding:9px 13px;border:1px solid var(--line)}.lesson-view,.quiz-view{max-width:1050px;margin:25px auto;padding:0 25px}.lesson-hero{height:300px;border-radius:13px;background:linear-gradient(135deg,#292d31,#4a4e53);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;position:relative;overflow:hidden}.lesson-hero:after{content:'';position:absolute;width:380px;height:380px;border:1px solid #ffffff20;border-radius:50%}.lesson-hero>span{font-size:75px;z-index:1}.lesson-hero button{z-index:2;position:absolute;width:65px;height:65px;border-radius:50%;border:0;background:#f47a20;color:#fff;font-size:22px}.lesson-hero small{position:absolute;bottom:20px}.lesson-content{background:#fff;border-radius:12px;padding:28px;margin-top:18px;line-height:1.7;box-shadow:0 5px 18px #2221}.lesson-content h2{color:#30343a}.lesson-content h3{color:#dc650f}.lesson-content .key-points{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.lesson-content .key-points span{padding:15px;background:#fff4eb;border-left:4px solid #f47a20;border-radius:5px}.lesson-view footer{display:flex;justify-content:space-between;margin-top:18px}.lesson-view footer button,.quiz-view>button{border:1px solid #c9cdd2;background:#fff;border-radius:5px;padding:11px 17px}.lesson-view footer #completeLesson,.quiz-view>button{background:#f47a20;color:#fff;border-color:#f47a20}.hidden{display:none}.quiz-head{background:linear-gradient(135deg,#282c30,#44484d);color:#fff;padding:25px;border-radius:10px;border-bottom:5px solid #f47a20}.quiz-head small{color:#f8a363}.question{background:#fff;margin:15px 0;padding:20px;border-radius:8px;border:1px solid var(--line)}.question label{display:block;padding:8px;border-radius:4px}.question label:hover{background:#fff3ea}.quiz-view>button{width:100%;font-size:15px}.result{margin-top:20px;padding:22px;border-radius:8px;text-align:center}.result.pass{background:#e7f7ef;color:#176c48}.result.fail{background:#fdebea;color:#a93434}.result a{display:inline-block;background:#f47a20;color:#fff;padding:10px 16px;border-radius:5px;text-decoration:none}.admin-page{margin:0;background:#e9ebee;font-family:Segoe UI,Arial;color:#292d32}.admin-side{position:fixed;width:230px;inset:0 auto 0 0;background:#22262a;color:#fff;padding:20px}.admin-side img{width:160px;background:#fff;padding:8px;border-radius:6px}.admin-side h2{border-bottom:1px solid #ffffff18;padding-bottom:20px}.admin-side button{width:100%;border:0;background:none;color:#ddd;text-align:left;padding:14px}.admin-side button.active,.admin-side button:hover{background:#f47a20;color:#fff}.admin-main{margin-left:230px;padding:22px}.admin-main header{margin:0}.admin-main header p{margin:3px 0;color:#888}.admin-main header>button{margin-left:auto;background:#f47a20;color:#fff;border:0;padding:11px 18px;border-radius:5px}.admin-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:20px 0}.admin-stats article{background:#fff;border-bottom:4px solid #f47a20;padding:20px;border-radius:7px}.admin-stats b,.admin-stats span{display:block}.admin-stats b{font-size:25px}.admin-stats span{color:#888;margin-top:4px}.admin-panel{background:#fff;border-radius:8px;padding:20px}.admin-title{display:flex;justify-content:space-between}.admin-title input{padding:9px;border:1px solid var(--line)}.admin-course{display:grid;grid-template-columns:1fr 130px 100px 150px;gap:15px;align-items:center;border-top:1px solid var(--line);padding:14px 5px}.admin-course small{color:#888}.status{color:#16815e;background:#e4f5ed;padding:5px 9px;border-radius:12px;text-align:center}.admin-course button{border:0;background:#eee;padding:7px}dialog{border:0;border-radius:10px;box-shadow:0 20px 50px #0005;width:430px}dialog::backdrop{background:#0007}dialog label{display:block;margin:13px 0}dialog input,dialog select{width:100%;padding:10px;margin-top:5px}dialog form>div{display:flex;justify-content:flex-end;gap:8px}dialog button{border:0;padding:9px 14px}dialog button[type=submit]{background:#f47a20;color:#fff}.certificate-page{margin:0;background:#dfe1e4;font-family:Georgia,serif}.certificate-actions{padding:15px;text-align:center}.certificate-actions button{margin:0 5px;padding:10px 15px;border:0;background:#30343a;color:#fff}.certificate{width:1120px;height:790px;margin:auto;background:#fff;padding:28px}.cert-border{height:100%;border:4px solid #333;outline:2px solid #f47a20;outline-offset:-12px;text-align:center;padding:45px;position:relative}.cert-border img{width:190px}.cert-border>small{display:block;color:#f47a20;letter-spacing:3px}.cert-border h1{font-size:52px;margin:35px 0 20px;color:#34373b}.cert-border h2{font-size:34px;color:#e46b13;border-bottom:1px solid #aaa;display:inline-block;padding:0 50px 8px}.cert-border h3{font-size:27px}.cert-data{display:flex;justify-content:center;gap:70px;margin-top:35px}.cert-data span,.cert-data b{display:block}.cert-data b{font-size:17px;margin-bottom:6px}.cert-data span{font:12px Segoe UI;color:#777}.signatures{display:flex;justify-content:space-between;margin-top:50px}.signatures span{width:220px}.signatures i{display:block;border-top:1px solid #333;margin-bottom:7px}.cert-border footer{position:absolute;bottom:22px;left:0;right:0;color:#777;font-size:12px}@media print{.certificate-actions{display:none}.certificate-page{background:#fff}.certificate{margin:0}}@media(max-width:760px){.lesson-sidebar{position:relative;width:100%;max-height:none}.lesson-main{margin:0}.lesson-header{height:auto;padding:15px}.lesson-content .key-points{grid-template-columns:1fr}.admin-side{position:relative;width:100%}.admin-main{margin:0}.admin-stats{grid-template-columns:1fr 1fr}.admin-course{grid-template-columns:1fr}.certificate{transform:scale(.55);transform-origin:top left}}
+/* =====================================================
+   SOLEX e-VIDHAYALAY
+   COURSE, QUIZ, ADMIN AND CERTIFICATE STYLING
+===================================================== */
+
+:root {
+    --orange: #f47a20;
+    --orange-dark: #d95f0b;
+    --charcoal: #25282c;
+    --dark: #191b1e;
+    --grey: #eceef1;
+    --light-grey: #f7f8fa;
+    --line: #d9dde2;
+    --green: #17855b;
+    --red: #b53b3b;
+}
+
+
+/* =====================================================
+   COURSE PAGE
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+.learning-page {
+    margin: 0;
+    background: #eef0f3;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #2c3035;
+}
+
+
+/* =====================================================
+   COURSE SIDEBAR
+===================================================== */
+
+.lesson-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 300px;
+
+    background: linear-gradient(
+        180deg,
+        #25282c,
+        #191b1e
+    );
+
+    color: white;
+
+    overflow-y: auto;
+}
+
+
+/* =====================================================
+   COURSE BRAND
+===================================================== */
+
+.course-brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px;
+
+    background: white;
+}
+
+.course-brand img {
+    width: 130px;
+}
+
+.course-brand button {
+    border: none;
+    background: none;
+    color: #555;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   COURSE SUMMARY
+===================================================== */
+
+.course-summary {
+    padding: 24px;
+    border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.course-summary small {
+    color: #f99b56;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.course-summary h2 {
+    margin: 10px 0 18px;
+    font-size: 19px;
+}
+
+.course-progress {
+    height: 7px;
+
+    background: rgba(255,255,255,.15);
+
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.course-progress i {
+    display: block;
+
+    width: 0;
+    height: 100%;
+
+    background: var(--orange);
+
+    border-radius: 5px;
+    transition: width .4s ease;
+}
+
+.course-summary p {
+    margin-bottom: 0;
+    font-size: 11px;
+    color: #bbbbbb;
+}
+
+
+/* =====================================================
+   LESSON LIST
+===================================================== */
+
+.lesson-list button,
+.quiz-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+
+    padding: 16px 18px;
+
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+
+    background: none;
+    color: #dfe2e5;
+
+    text-align: left;
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.lesson-list button:hover {
+    background: #34383d;
+}
+
+.lesson-list button.active {
+    background: linear-gradient(
+        90deg,
+        var(--orange),
+        var(--orange-dark)
+    );
+
+    color: white;
+}
+
+.lesson-list button.done::before {
+    content: "✓";
+    color: #5dd18b;
+    font-weight: bold;
+}
+
+.lesson-list button:not(.done)::before {
+    content: "○";
+}
+
+.lesson-list button.active.done::before {
+    color: white;
+}
+
+.quiz-link {
+    margin-top: 10px;
+    background: #30343a;
+    color: white;
+    font-weight: 600;
+}
+
+.quiz-link:hover {
+    background: var(--orange);
+}
+
+
+/* =====================================================
+   COURSE MAIN AREA
+===================================================== */
+
+.lesson-main {
+    min-height: 100vh;
+    margin-left: 300px;
+}
+
+
+/* =====================================================
+   COURSE HEADER
+===================================================== */
+
+.lesson-header {
+    display: flex;
+    align-items: center;
+
+    height: 85px;
+    margin: 0;
+    padding: 0 28px;
+
+    background: white;
+
+    border-radius: 0;
+    border-top: 4px solid var(--orange);
+
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+.lesson-header h1 {
+    margin: 5px 0 0;
+    font-size: 22px;
+    color: #30343a;
+}
+
+.lesson-header small {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+.lesson-header select {
+    margin-left: auto;
+    padding: 9px 13px;
+
+    border: 1px solid var(--line);
+    border-radius: 5px;
+
+    background: white;
+}
+
+
+/* =====================================================
+   LESSON VIEW
+===================================================== */
+
+.lesson-view,
+.quiz-view {
+    max-width: 1050px;
+
+    margin: 25px auto;
+    padding: 0 25px;
+}
+
+
+/* =====================================================
+   LESSON VISUAL AREA
+===================================================== */
+
+.lesson-hero {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 300px;
+
+    border-radius: 13px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #484c51,
+            #292d31
+        );
+
+    color: white;
+    overflow: hidden;
+}
+
+.lesson-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50%;
+}
+
+.lesson-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 50%;
+}
+
+.lesson-hero > span {
+    z-index: 1;
+    font-size: 75px;
+}
+
+.lesson-hero button {
+    z-index: 2;
+
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--orange);
+    color: white;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    box-shadow: 0 8px 24px rgba(244,122,32,.45);
+
+    transition: .2s;
+}
+
+.lesson-hero button:hover {
+    transform: scale(1.08);
+}
+
+.lesson-hero small {
+    position: absolute;
+    bottom: 20px;
+
+    color: #d8dade;
+}
+
+
+/* =====================================================
+   LESSON CONTENT
+===================================================== */
+
+.lesson-content {
+    margin-top: 18px;
+    padding: 28px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    line-height: 1.7;
+
+    box-shadow: 0 5px 18px rgba(34,34,34,.08);
+}
+
+.lesson-content h2 {
+    margin-top: 0;
+    color: #30343a;
+}
+
+.lesson-content h3 {
+    margin-top: 25px;
+    color: var(--orange-dark);
+}
+
+.lesson-content p {
+    color: #59616b;
+}
+
+.lesson-content .key-points {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+.lesson-content .key-points span {
+    padding: 15px;
+
+    background: #fff4eb;
+
+    border-left: 4px solid var(--orange);
+    border-radius: 5px;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   LESSON NAVIGATION
+===================================================== */
+
+.lesson-view footer {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 18px;
+}
+
+.lesson-view footer button,
+.quiz-view > button {
+    padding: 11px 17px;
+
+    border: 1px solid #c9cdd2;
+    border-radius: 5px;
+
+    background: white;
+    color: #34383d;
+
+    cursor: pointer;
+}
+
+.lesson-view footer button:hover {
+    border-color: var(--orange);
+}
+
+.lesson-view footer button:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.lesson-view footer #completeLesson,
+.quiz-view > button {
+    background: var(--orange);
+    color: white;
+    border-color: var(--orange);
+}
+
+.lesson-view footer #completeLesson:hover,
+.quiz-view > button:hover {
+    background: var(--orange-dark);
+}
+
+
+/* =====================================================
+   HIDDEN SECTIONS
+===================================================== */
+
+.hidden {
+    display: none;
+}
+
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-head {
+    padding: 25px;
+
+    border-radius: 10px;
+    border-bottom: 5px solid var(--orange);
+
+    background: linear-gradient(
+        135deg,
+        #282c30,
+        #44484d
+    );
+
+    color: white;
+}
+
+.quiz-head small {
+    color: #f8a363;
+    font-weight: 700;
+}
+
+.quiz-head h2 {
+    margin-bottom: 8px;
+}
+
+.quiz-head p {
+    margin-bottom: 0;
+    color: #d6d8db;
+}
+
+.question {
+    margin: 15px 0;
+    padding: 20px;
+
+    background: white;
+
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.question b {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.question label {
+    display: block;
+
+    padding: 9px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+.question label:hover {
+    background: #fff3ea;
+}
+
+.question input {
+    margin-right: 8px;
+    accent-color: var(--orange);
+}
+
+.quiz-view > button {
+    width: 100%;
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   QUIZ RESULT
+===================================================== */
+
+.result {
+    margin-top: 20px;
+    padding: 22px;
+
+    border-radius: 8px;
+    text-align: center;
+}
+
+.result.pass {
+    background: #e7f7ef;
+    color: #176c48;
+}
+
+.result.fail {
+    background: #fdebea;
+    color: #a93434;
+}
+
+.result a {
+    display: inline-block;
+
+    margin-top: 10px;
+    padding: 10px 16px;
+
+    border-radius: 5px;
+
+    background: var(--orange);
+    color: white;
+
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   ADMIN PAGE
+===================================================== */
+
+.admin-page {
+    margin: 0;
+
+    background: #e9ebee;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #292d32;
+}
+
+
+/* =====================================================
+   ADMIN SIDEBAR
+===================================================== */
+
+.admin-side {
+    position: fixed;
+    inset: 0 auto 0 0;
+
+    width: 230px;
+
+    padding: 20px;
+
+    background: #22262a;
+    color: white;
+}
+
+.admin-side img {
+    width: 160px;
+
+    padding: 8px;
+
+    background: white;
+
+    border-radius: 6px;
+}
+
+.admin-side h2 {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.admin-side button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    background: none;
+    color: #dddddd;
+
+    text-align: left;
+    cursor: pointer;
+}
+
+.admin-side button.active,
+.admin-side button:hover {
+    background: var(--orange);
+    color: white;
+}
+
+
+/* =====================================================
+   ADMIN MAIN AREA
+===================================================== */
+
+.admin-main {
+    margin-left: 230px;
+    padding: 22px;
+}
+
+.admin-main header {
+    display: flex;
+    align-items: center;
+
+    height: auto;
+    margin: 0;
+    padding: 20px;
+
+    border-top: 4px solid var(--orange);
+}
+
+.admin-main header h1 {
+    margin: 0;
+    color: #30343a;
+}
+
+.admin-main header p {
+    margin: 3px 0;
+    color: #888888;
+}
+
+.admin-main header > button {
+    margin-left: auto;
+
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: var(--orange);
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   ADMIN KPI CARDS
+===================================================== */
+
+.admin-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin: 20px 0;
+}
+
+.admin-stats article {
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 7px;
+    border-bottom: 4px solid var(--orange);
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.07);
+}
+
+.admin-stats b,
+.admin-stats span {
+    display: block;
+}
+
+.admin-stats b {
+    font-size: 25px;
+}
+
+.admin-stats span {
+    margin-top: 4px;
+    color: #888888;
+}
+
+
+/* =====================================================
+   ADMIN COURSE TABLE
+===================================================== */
+
+.admin-panel {
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 8px;
+}
+
+.admin-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-title input {
+    padding: 9px;
+
+    border: 1px solid var(--line);
+    border-radius: 4px;
+}
+
+.admin-course {
+    display: grid;
+
+    grid-template-columns:
+        1fr 130px 100px 150px;
+
+    gap: 15px;
+    align-items: center;
+
+    padding: 14px 5px;
+
+    border-top: 1px solid var(--line);
+}
+
+.admin-course small {
+    color: #888888;
+}
+
+.status {
+    padding: 5px 9px;
+
+    border-radius: 12px;
+
+    background: #e4f5ed;
+    color: var(--green);
+
+    text-align: center;
+}
+
+.admin-course button {
+    padding: 7px;
+
+    border: none;
+
+    background: #eeeeee;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   ADMIN DIALOG
+===================================================== */
+
+dialog {
+    width: 430px;
+    max-width: 90%;
+
+    border: none;
+    border-radius: 10px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+
+dialog::backdrop {
+    background: rgba(0,0,0,.65);
+}
+
+dialog label {
+    display: block;
+    margin: 13px 0;
+}
+
+dialog input,
+dialog select {
+    width: 100%;
+
+    margin-top: 5px;
+    padding: 10px;
+}
+
+dialog form > div {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+dialog button {
+    padding: 9px 14px;
+    border: none;
+    cursor: pointer;
+}
+
+dialog button[type="submit"] {
+    background: var(--orange);
+    color: white;
+}
+
+
+/* =====================================================
+   CERTIFICATE PAGE
+===================================================== */
+
+.certificate-page {
+    margin: 0;
+
+    background: #dfe1e4;
+
+    font-family: Georgia, serif;
+}
+
+.certificate-actions {
+    padding: 15px;
+    text-align: center;
+}
+
+.certificate-actions button {
+    margin: 0 5px;
+    padding: 10px 15px;
+
+    border: none;
+
+    background: #30343a;
+    color: white;
+
+    cursor: pointer;
+}
+
+.certificate {
+    width: 1120px;
+    height: 790px;
+
+    margin: auto;
+    padding: 28px;
+
+    background: white;
+}
+
+.cert-border {
+    position: relative;
+
+    height: 100%;
+
+    padding: 45px;
+
+    border: 4px solid #333333;
+    outline: 2px solid var(--orange);
+    outline-offset: -12px;
+
+    text-align: center;
+}
+
+.cert-border img {
+    width: 190px;
+}
+
+.cert-border > small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--orange);
+
+    letter-spacing: 3px;
+}
+
+.cert-border h1 {
+    margin: 35px 0 20px;
+
+    color: #34373b;
+
+    font-size: 52px;
+}
+
+.cert-border h2 {
+    display: inline-block;
+
+    padding: 0 50px 8px;
+
+    border-bottom: 1px solid #aaaaaa;
+
+    color: #e46b13;
+
+    font-size: 34px;
+}
+
+.cert-border h3 {
+    font-size: 27px;
+}
+
+.cert-data {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+
+    margin-top: 35px;
+}
+
+.cert-data span,
+.cert-data b {
+    display: block;
+}
+
+.cert-data b {
+    margin-bottom: 6px;
+    font-size: 17px;
+}
+
+.cert-data span {
+    color: #777777;
+    font: 12px "Segoe UI", Arial, sans-serif;
+}
+
+.signatures {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 50px;
+}
+
+.signatures span {
+    width: 220px;
+}
+
+.signatures i {
+    display: block;
+
+    margin-bottom: 7px;
+
+    border-top: 1px solid #333333;
+}
+
+.cert-border footer {
+    position: absolute;
+
+    right: 0;
+    bottom: 22px;
+    left: 0;
+
+    color: #777777;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   PRINT CERTIFICATE
+===================================================== */
+
+@media print {
+
+    .certificate-actions {
+        display: none;
+    }
+
+    .certificate-page {
+        background: white;
+    }
+
+    .certificate {
+        margin: 0;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 760px) {
+
+    .lesson-sidebar {
+        position: relative;
+
+        width: 100%;
+        max-height: none;
+    }
+
+    .lesson-main {
+        margin: 0;
+    }
+
+    .lesson-header {
+        height: auto;
+        padding: 15px;
+    }
+
+    .lesson-header h1 {
+        font-size: 18px;
+    }
+
+    .lesson-content .key-points {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-view footer {
+        gap: 5px;
+    }
+
+    .lesson-view footer button {
+        padding: 9px;
+        font-size: 11px;
+    }
+
+    .admin-side {
+        position: relative;
+        width: 100%;
+    }
+
+    .admin-main {
+        margin: 0;
+    }
+
+    .admin-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .admin-course {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate {
+        transform: scale(.55);
+        transform-origin: top left;
+    }
+}
