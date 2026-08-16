@@ -15,3 +15,17 @@ document.querySelector("#loginForm").addEventListener("submit", function(event){
   sessionStorage.setItem("evidhayalaySession",JSON.stringify({id:user.id,name:user.name,department:user.department}));
   window.location.href="index.html";
 });
+
+// Register the e-Vidhayalay service worker
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .then(() => {
+        console.log("e-Vidhayalay offline service is active.");
+      })
+      .catch((error) => {
+        console.error("Service worker registration failed:", error);
+      });
+  });
+}
