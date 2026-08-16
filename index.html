@@ -1,7 +1,856 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Solex e‑Vidhayalay</title><link rel="stylesheet" href="portal.css"><link rel="stylesheet" href="theme.css"></head><body>
-<aside class="sidebar"><div class="logo-box"><img src="assets/solex-logo.png" class="actual-logo" alt="Solex Energies"></div><h1>e‑Vidhayalay</h1><p>Learning & Development</p><nav><button class="active" data-view="dashboard">⌂ <span>Dashboard</span></button><button data-view="learning">▶ <span>My Learning</span></button><button data-view="library">▦ <span>Course Library</span></button><button data-view="skills">▥ <span>Skill Matrix</span></button><button data-view="assessment">✓ <span>Assessments</span><i>2</i></button><button data-view="certificate">◇ <span>Certificates</span></button><button data-view="sama">🤖 <span>Ask SAMA</span></button><button data-view="admin">⚙ <span>Admin Console</span></button></nav></aside>
-<main><header><button id="mobileMenu">☰</button><div><h2 id="pageTitle">Solex Learning & Development Portal</h2><small id="liveClock">Loading date and time...</small></div><div class="live-pill"><i></i> LIVE</div><button class="notification" aria-label="Notifications">🔔<b>3</b></button><div class="department">♟ <span id="departmentName">Operations Excellence Department</span></div><button class="logout" onclick="logout()">Logout</button></header>
-<div class="workspace"><section class="kpis"><article><span>Assigned Courses</span><b data-value="6" data-suffix="">00</b><small>2 in progress</small></article><article><span>Completed</span><b data-value="12" data-suffix="">00</b><small>+2 this month</small></article><article><span>Learning Hours</span><b data-value="18.5" data-suffix="">0</b><small>This quarter</small></article><article><span>Skill Compliance</span><b data-value="86" data-suffix="%">0%</b><small>Target 95%</small></article></section>
-<section class="panel"><div class="panel-title"><b id="sectionTitle">Learning Dashboard</b><div><input id="search" placeholder="Search courses..."><select id="category"><option>All</option><option>Production</option><option>Quality</option><option>Maintenance</option><option>Digital</option><option>Safety</option><option>Leadership</option></select></div></div><div class="banner"><div class="banner-logo"><img src="assets/solex-logo.png" class="banner-logo-img" alt="Solex Energies"><h3>Knowledge powers performance.</h3><p>Build capability. Improve quality. Strengthen operations.</p><div class="quick-actions"><button onclick="location.href='course.html'">▶ Continue Learning</button><button onclick="document.querySelector('#search').focus()">⌕ Explore Courses</button></div></div><div class="banner-art"><span>e‑Vidhayalay</span><b>LEARN • GROW • LEAD</b></div></div>
-<div class="content-row"><section class="courses-wrap"><div class="subhead"><div><small>CONTINUE LEARNING</small><h3>Your active development plan</h3></div><button onclick="document.querySelector('#category').value='All';render()">View All →</button></div><div id="courses" class="courses"></div></section><aside class="right-card"><h3>Weekly Progress</h3><div class="progress-ring"><b>72%</b></div><p><strong>3h 36m</strong> of 5 hours</p><div class="week"><i>✓</i><i>✓</i><i>✓</i><i>✓</i><i class="today">F</i><i>S</i><i>S</i></div><hr><h3>Mandatory Training</h3><p class="deadline">⚠ EHS & LOTO<br><small>Due in 5 days</small></p><button onclick="alert('Opening mandatory training')">Start Training</button></aside></div></section></div></main>
-<div class="toast" id="toast">Course opened successfully</div><script src="portal.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Solex Digital Ecosystem</title>
+
+  <link rel="stylesheet" href="ecosystem.css">
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="theme-color" content="#f57e20">
+</head>
+
+<body>
+
+  <!-- Mobile Overlay -->
+  <div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    onclick="closeSidebar()"
+  ></div>
+
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+
+      <img
+        src="assets/solex-logo.png"
+        alt="Solex Energies"
+      >
+
+      <h2>Digital Ecosystem</h2>
+
+      <p>Connect • Analyse • Learn</p>
+
+    </div>
+
+    <nav class="sidebar-navigation">
+
+      <button
+        class="navigation-button active"
+        data-section="dashboard"
+      >
+        <span>▦</span>
+        Dashboard
+      </button>
+
+      <button
+        class="navigation-button"
+        data-section="applications"
+      >
+        <span>◈</span>
+        Applications
+      </button>
+
+      <button
+        class="navigation-button"
+        data-section="activities"
+      >
+        <span>◷</span>
+        Recent Activity
+      </button>
+
+      <button
+        class="navigation-button"
+        data-section="help"
+      >
+        <span>?</span>
+        Help & Support
+      </button>
+
+    </nav>
+
+    <div class="sidebar-footer">
+
+      <div class="sidebar-user">
+
+        <div class="sidebar-avatar" id="sidebarAvatar">
+          ST
+        </div>
+
+        <div>
+          <strong id="sidebarUserName">
+            Siddhant Tripathi
+          </strong>
+
+          <span id="sidebarUserRole">
+            Administrator
+          </span>
+        </div>
+
+      </div>
+
+      <button
+        class="logout-button"
+        id="logoutButton"
+        type="button"
+      >
+        ↪ Logout
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- Main Area -->
+  <main class="main-content">
+
+    <!-- Header -->
+    <header class="top-header">
+
+      <div class="header-left">
+
+        <button
+          class="mobile-menu-button"
+          id="mobileMenuButton"
+          type="button"
+          aria-label="Open navigation"
+        >
+          ☰
+        </button>
+
+        <div>
+          <h1>Solex Digital Ecosystem</h1>
+
+          <p>
+            Manufacturing intelligence, maintenance support
+            and workforce development
+          </p>
+        </div>
+
+      </div>
+
+      <div class="header-right">
+
+        <div class="live-status">
+          <span class="status-indicator"></span>
+          All Systems Online
+        </div>
+
+        <button
+          class="notification-button"
+          id="notificationButton"
+          type="button"
+          aria-label="Notifications"
+        >
+          🔔
+          <span class="notification-count">3</span>
+        </button>
+
+        <div class="header-user">
+
+          <div class="header-avatar" id="headerAvatar">
+            ST
+          </div>
+
+          <div>
+            <strong id="headerUserName">
+              Siddhant Tripathi
+            </strong>
+
+            <span id="headerUserDepartment">
+              Operation Excellence
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- Dashboard Section -->
+    <section
+      class="content-section active-section"
+      id="dashboardSection"
+    >
+
+      <!-- Welcome Banner -->
+      <section class="welcome-banner">
+
+        <div class="welcome-content">
+
+          <span class="welcome-label">
+            SOLEX DIGITAL TRANSFORMATION
+          </span>
+
+          <h2 id="welcomeMessage">
+            Welcome back, Siddhant
+          </h2>
+
+          <p>
+            Access real-time manufacturing insights,
+            intelligent maintenance assistance and
+            structured employee learning from one platform.
+          </p>
+
+          <button
+            class="explore-button"
+            type="button"
+            onclick="showSection('applications')"
+          >
+            Explore Applications →
+          </button>
+
+        </div>
+
+        <div class="welcome-visual">
+
+          <div class="visual-orbit orbit-one"></div>
+          <div class="visual-orbit orbit-two"></div>
+
+          <div class="visual-center">
+            <img
+              src="assets/solex-logo.png"
+              alt="Solex"
+            >
+          </div>
+
+          <div class="orbit-item mes-orbit">
+            📊
+          </div>
+
+          <div class="orbit-item sama-orbit">
+            🤖
+          </div>
+
+          <div class="orbit-item learning-orbit">
+            🎓
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- KPI Cards -->
+      <section class="statistics-grid">
+
+        <article class="statistic-card">
+
+          <div class="statistic-icon orange-icon">
+            ◈
+          </div>
+
+          <div>
+            <span>Connected Applications</span>
+            <strong>3</strong>
+            <small>MES, SAMA and e-Vidhayalay</small>
+          </div>
+
+        </article>
+
+        <article class="statistic-card">
+
+          <div class="statistic-icon green-icon">
+            ✓
+          </div>
+
+          <div>
+            <span>System Availability</span>
+            <strong>99.8%</strong>
+            <small>All services operational</small>
+          </div>
+
+        </article>
+
+        <article class="statistic-card">
+
+          <div class="statistic-icon blue-icon">
+            ♟
+          </div>
+
+          <div>
+            <span>Active Users</span>
+            <strong>124</strong>
+            <small>Across all departments</small>
+          </div>
+
+        </article>
+
+        <article class="statistic-card">
+
+          <div class="statistic-icon purple-icon">
+            ↗
+          </div>
+
+          <div>
+            <span>Digital Adoption</span>
+            <strong>86%</strong>
+            <small>12% improvement this month</small>
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- Application Cards -->
+      <section class="applications-area">
+
+        <div class="section-heading">
+
+          <div>
+            <span class="section-label">
+              INTEGRATED APPLICATIONS
+            </span>
+
+            <h2>Your Digital Workplace</h2>
+
+            <p>
+              Select an application based on your assigned access.
+            </p>
+          </div>
+
+          <button
+            class="view-all-button"
+            type="button"
+            onclick="showSection('applications')"
+          >
+            View All
+          </button>
+
+        </div>
+
+        <div class="application-grid">
+
+          <!-- MES -->
+          <article
+            class="application-card mes-card"
+            data-application="mes"
+          >
+
+            <div class="application-top">
+
+              <div class="application-icon">
+                📊
+              </div>
+
+              <span class="application-status">
+                <i></i>
+                Live
+              </span>
+
+            </div>
+
+            <div class="application-content">
+
+              <span class="application-category">
+                MANUFACTURING INTELLIGENCE
+              </span>
+
+              <h3>Solex MES Portal</h3>
+
+              <p>
+                Monitor production, quality, process,
+                maintenance and management KPIs through
+                integrated Power BI dashboards.
+              </p>
+
+              <ul>
+                <li>Real-time production monitoring</li>
+                <li>Quality and rejection analytics</li>
+                <li>Department-wise dashboard access</li>
+              </ul>
+
+            </div>
+
+            <button
+              class="application-button"
+              type="button"
+              onclick="openApplication('mes')"
+            >
+              Open MES Dashboard
+              <span>→</span>
+            </button>
+
+          </article>
+
+
+          <!-- SAMA -->
+          <article
+            class="application-card sama-card"
+            data-application="sama"
+          >
+
+            <div class="application-top">
+
+              <div class="application-icon">
+                🤖
+              </div>
+
+              <span class="application-status">
+                <i></i>
+                Online
+              </span>
+
+            </div>
+
+            <div class="application-content">
+
+              <span class="application-category">
+                AI MAINTENANCE ASSISTANT
+              </span>
+
+              <h3>SAMA</h3>
+
+              <p>
+                Intelligent machine troubleshooting,
+                alarm assistance, preventive maintenance
+                and equipment-knowledge support.
+              </p>
+
+              <ul>
+                <li>Machine breakdown assistance</li>
+                <li>Alarm and root-cause guidance</li>
+                <li>PM and spare-parts knowledge</li>
+              </ul>
+
+            </div>
+
+            <button
+              class="application-button"
+              type="button"
+              onclick="openApplication('sama')"
+            >
+              Launch SAMA
+              <span>→</span>
+            </button>
+
+          </article>
+
+
+          <!-- e-Vidhayalay -->
+          <article
+            class="application-card learning-card"
+            data-application="learning"
+          >
+
+            <div class="application-top">
+
+              <div class="application-icon">
+                🎓
+              </div>
+
+              <span class="application-status">
+                <i></i>
+                Available
+              </span>
+
+            </div>
+
+            <div class="application-content">
+
+              <span class="application-category">
+                LEARNING & DEVELOPMENT
+              </span>
+
+              <h3>Solex e-Vidhayalay</h3>
+
+              <p>
+                Develop workforce skills through structured
+                manufacturing courses, assessments,
+                progress tracking and certificates.
+              </p>
+
+              <ul>
+                <li>TOPCon manufacturing courses</li>
+                <li>Quiz and automatic scoring</li>
+                <li>Training progress and certificates</li>
+              </ul>
+
+            </div>
+
+            <button
+              class="application-button"
+              type="button"
+              onclick="openApplication('learning')"
+            >
+              Start Learning
+              <span>→</span>
+            </button>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- Bottom Dashboard -->
+      <section class="dashboard-bottom-grid">
+
+        <!-- Recent Activities -->
+        <article class="dashboard-panel">
+
+          <div class="panel-heading">
+
+            <div>
+              <span class="section-label">
+                ACTIVITY
+              </span>
+
+              <h2>Recent Activity</h2>
+            </div>
+
+            <button
+              type="button"
+              onclick="showSection('activities')"
+            >
+              View all
+            </button>
+
+          </div>
+
+          <div class="activity-list" id="activityList">
+
+            <div class="activity-item">
+
+              <div class="activity-icon activity-orange">
+                🎓
+              </div>
+
+              <div>
+                <strong>TOPCon Manufacturing</strong>
+                <p>Course progress updated to 60%</p>
+              </div>
+
+              <span>10 min ago</span>
+
+            </div>
+
+            <div class="activity-item">
+
+              <div class="activity-icon activity-blue">
+                📊
+              </div>
+
+              <div>
+                <strong>MES Dashboard</strong>
+                <p>Production dashboard accessed</p>
+              </div>
+
+              <span>1 hour ago</span>
+
+            </div>
+
+            <div class="activity-item">
+
+              <div class="activity-icon activity-green">
+                🤖
+              </div>
+
+              <div>
+                <strong>SAMA Assistant</strong>
+                <p>Laminator alarm solution viewed</p>
+              </div>
+
+              <span>Yesterday</span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Quick Access -->
+        <article class="dashboard-panel">
+
+          <div class="panel-heading">
+
+            <div>
+              <span class="section-label">
+                SHORTCUTS
+              </span>
+
+              <h2>Quick Access</h2>
+            </div>
+
+          </div>
+
+          <div class="quick-access-grid">
+
+            <button
+              type="button"
+              onclick="openApplication('mes')"
+            >
+              <span>📈</span>
+              Production Dashboard
+            </button>
+
+            <button
+              type="button"
+              onclick="openApplication('sama')"
+            >
+              <span>🛠️</span>
+              Machine Support
+            </button>
+
+            <button
+              type="button"
+              onclick="openApplication('learning')"
+            >
+              <span>📘</span>
+              Continue Course
+            </button>
+
+            <button
+              type="button"
+              onclick="window.location.href='certificate.html'"
+            >
+              <span>🏆</span>
+              My Certificates
+            </button>
+
+          </div>
+
+        </article>
+
+      </section>
+
+    </section>
+
+
+    <!-- Applications Section -->
+    <section
+      class="content-section"
+      id="applicationsSection"
+    >
+
+      <div class="page-heading">
+        <span class="section-label">APPLICATIONS</span>
+        <h2>Integrated Solex Applications</h2>
+        <p>
+          Applications are displayed according to your
+          department and assigned role.
+        </p>
+      </div>
+
+      <div
+        class="application-grid full-application-grid"
+        id="fullApplicationGrid"
+      >
+        <!-- Generated through ecosystem.js -->
+      </div>
+
+    </section>
+
+
+    <!-- Activity Section -->
+    <section
+      class="content-section"
+      id="activitiesSection"
+    >
+
+      <div class="page-heading">
+        <span class="section-label">HISTORY</span>
+        <h2>Recent Activity</h2>
+        <p>
+          Review your recent portal and learning activity.
+        </p>
+      </div>
+
+      <div class="dashboard-panel">
+
+        <div class="activity-table-wrapper">
+
+          <table class="activity-table">
+
+            <thead>
+              <tr>
+                <th>Application</th>
+                <th>Activity</th>
+                <th>Date and Time</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody id="activityTableBody">
+              <!-- Generated through ecosystem.js -->
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Help Section -->
+    <section
+      class="content-section"
+      id="helpSection"
+    >
+
+      <div class="page-heading">
+        <span class="section-label">SUPPORT</span>
+        <h2>Help & Support</h2>
+        <p>
+          Find answers or report an issue with a digital application.
+        </p>
+      </div>
+
+      <div class="help-grid">
+
+        <article class="help-card">
+          <span>📊</span>
+          <h3>MES Dashboard Support</h3>
+          <p>
+            Report dashboard access, refresh or data issues.
+          </p>
+          <button type="button">Contact BI Support</button>
+        </article>
+
+        <article class="help-card">
+          <span>🤖</span>
+          <h3>SAMA Support</h3>
+          <p>
+            Report missing machine, alarm or maintenance information.
+          </p>
+          <button type="button">Contact Maintenance</button>
+        </article>
+
+        <article class="help-card">
+          <span>🎓</span>
+          <h3>Learning Support</h3>
+          <p>
+            Get assistance with courses, quizzes and certificates.
+          </p>
+          <button type="button">Contact L&D Team</button>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="main-footer">
+
+      <p>
+        © <span id="currentYear"></span>
+        Solex Energies Limited
+      </p>
+
+      <p>
+        Digital Transformation • Operation Excellence
+      </p>
+
+    </footer>
+
+  </main>
+
+
+  <!-- Notification Panel -->
+  <aside
+    class="notification-panel"
+    id="notificationPanel"
+  >
+
+    <div class="notification-header">
+
+      <h3>Notifications</h3>
+
+      <button
+        id="closeNotifications"
+        type="button"
+        aria-label="Close notifications"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <div class="notification-list">
+
+      <article>
+        <span class="notification-icon">🎓</span>
+
+        <div>
+          <strong>Course reminder</strong>
+          <p>Complete your TOPCon Manufacturing assessment.</p>
+          <small>10 minutes ago</small>
+        </div>
+      </article>
+
+      <article>
+        <span class="notification-icon">📊</span>
+
+        <div>
+          <strong>MES report updated</strong>
+          <p>The latest production dashboard is available.</p>
+          <small>1 hour ago</small>
+        </div>
+      </article>
+
+      <article>
+        <span class="notification-icon">🤖</span>
+
+        <div>
+          <strong>SAMA knowledge updated</strong>
+          <p>New laminator troubleshooting content was added.</p>
+          <small>Yesterday</small>
+        </div>
+      </article>
+
+    </div>
+
+  </aside>
+
+
+  <!-- Access Denied Modal -->
+  <div
+    class="modal-overlay"
+    id="accessModal"
+  >
+
+    <div class="access-modal">
+
+      <div class="modal-icon">🔒</div>
+
+      <h2>Access Restricted</h2>
+
+      <p id="accessMessage">
+        Your role does not have permission to access this application.
+      </p>
+
+      <button
+        type="button"
+        onclick="closeAccessModal()"
+      >
+        Understood
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script src="config.js"></script>
+  <script src="ecosystem.js"></script>
+
+</body>
+</html>
