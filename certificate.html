@@ -1,1 +1,276 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Course Certificate</title><link rel="stylesheet" href="learning.css"></head><body class="certificate-page"><div class="certificate-actions"><button onclick="location.href='index.html'">← Dashboard</button><button onclick="window.print()">Download / Print PDF</button></div><main class="certificate"><div class="cert-border"><img src="assets/solex-logo.png" alt="Solex"><small>SOLEX e‑VIDHAYALAY</small><h1>Certificate of Completion</h1><p>This certificate is proudly presented to</p><h2 id="learnerName">Solex Learner</h2><p>for successfully completing the learning programme</p><h3>TOPCon Module Manufacturing</h3><div class="cert-data"><span><b id="certScore">—</b>Assessment Score</span><span><b id="certDate">—</b>Date of Completion</span><span><b id="certId">—</b>Certificate ID</span></div><div class="signatures"><span><i></i>Learning & Development</span><span><i></i>Department Head</span></div><footer>Knowledge powers performance • Learn • Grow • Lead</footer></div></main><script>const session=JSON.parse(sessionStorage.getItem('evidhayalaySession')||'null');const result=JSON.parse(localStorage.getItem('topconResult')||'null');if(!result||!result.passed)location.href='course.html';document.querySelector('#learnerName').textContent=session?.name||'Solex Learner';document.querySelector('#certScore').textContent=result.score+'%';document.querySelector('#certDate').textContent=result.date;document.querySelector('#certId').textContent=result.id;</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Solex e-Vidhayalay Certificate
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="learning.css"
+    >
+
+</head>
+
+
+<body class="certificate-page">
+
+
+<!-- =====================================================
+     CERTIFICATE CONTROLS
+===================================================== -->
+
+<div class="certificate-actions">
+
+    <button onclick="location.href='index.html'">
+        ← Dashboard
+    </button>
+
+    <button onclick="window.print()">
+        Download / Print PDF
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     CERTIFICATE
+===================================================== -->
+
+<main class="certificate">
+
+    <div class="cert-border">
+
+
+        <!-- SOLEX LOGO -->
+
+        <img
+            src="assets/solex-logo.png"
+            alt="Solex Energies"
+        >
+
+
+        <small>
+            SOLEX e-VIDHAYALAY
+        </small>
+
+
+        <h1>
+            Certificate of Completion
+        </h1>
+
+
+        <p>
+            This certificate is proudly presented to
+        </p>
+
+
+        <!-- LEARNER NAME -->
+
+        <h2 id="learnerName">
+            Solex Learner
+        </h2>
+
+
+        <p>
+            for successfully completing the learning programme
+        </p>
+
+
+        <!-- COURSE NAME -->
+
+        <h3>
+            TOPCon Module Manufacturing
+        </h3>
+
+
+        <!-- CERTIFICATE INFORMATION -->
+
+        <div class="cert-data">
+
+
+            <span>
+
+                <b id="certScore">
+                    —
+                </b>
+
+                Assessment Score
+
+            </span>
+
+
+            <span>
+
+                <b id="certDate">
+                    —
+                </b>
+
+                Date of Completion
+
+            </span>
+
+
+            <span>
+
+                <b id="certId">
+                    —
+                </b>
+
+                Certificate ID
+
+            </span>
+
+
+        </div>
+
+
+        <!-- SIGNATURES -->
+
+        <div class="signatures">
+
+
+            <span>
+
+                <i></i>
+
+                Learning & Development
+
+            </span>
+
+
+            <span>
+
+                <i></i>
+
+                Department Head
+
+            </span>
+
+
+        </div>
+
+
+        <!-- CERTIFICATE FOOTER -->
+
+        <footer>
+
+            Knowledge powers performance
+
+            •
+
+            Learn
+
+            •
+
+            Grow
+
+            •
+
+            Lead
+
+        </footer>
+
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     CERTIFICATE SCRIPT
+===================================================== -->
+
+<script>
+
+
+// Get logged-in learner information.
+
+const learnerSession =
+    JSON.parse(
+        sessionStorage.getItem(
+            "evidhayalaySession"
+        ) || "null"
+    );
+
+
+// Get assessment result.
+
+const courseResult =
+    JSON.parse(
+        localStorage.getItem(
+            "topconResult"
+        ) || "null"
+    );
+
+
+// Do not allow certificate access
+// unless the learner passed the assessment.
+
+if (
+    !courseResult ||
+    !courseResult.passed
+) {
+
+    alert(
+        "Complete the TOPCon assessment with at least 70% to unlock the certificate."
+    );
+
+    window.location.href =
+        "course.html#assessment";
+}
+
+
+// Display learner name.
+
+document.getElementById(
+    "learnerName"
+).textContent =
+
+    learnerSession?.name ||
+    "Solex Learner";
+
+
+// Display assessment score.
+
+document.getElementById(
+    "certScore"
+).textContent =
+
+    courseResult.score +
+    "%";
+
+
+// Display completion date.
+
+document.getElementById(
+    "certDate"
+).textContent =
+
+    courseResult.date;
+
+
+// Display unique certificate ID.
+
+document.getElementById(
+    "certId"
+).textContent =
+
+    courseResult.id;
+
+
+</script>
+
+
+</body>
+
+</html>
