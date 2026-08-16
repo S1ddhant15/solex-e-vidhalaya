@@ -7,6 +7,8 @@ Static GitHub Pages prototype for Solex Energies Learning & Development.
 - `login.html` — login screen
 - `index.html` — learning dashboard
 - `portal.css` — styling
+- `theme.css` — Solex orange, charcoal and grey live theme
+- `assets/solex-logo.png` — official Solex logo
 - `auth.js` — demonstration users and login validation
 - `portal.js` — courses, search, navigation and logout
 
@@ -19,7 +21,7 @@ Static GitHub Pages prototype for Solex Energies Learning & Development.
 ## Publish on GitHub Pages
 
 1. Create a public repository named `solex-e-vidhayalay`.
-2. Upload all five project files to the repository root.
+2. Upload all project files and the complete `assets` folder to the repository root.
 3. Open **Settings → Pages**.
 4. Select **Deploy from a branch**.
 5. Choose **main** and **/(root)**, then Save.
