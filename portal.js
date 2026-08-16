@@ -49,17 +49,3 @@ function openCourse(title){
   if(title.includes("TOPCon")){window.location.href="course.html";return;}
   const toast=document.querySelector("#toast");toast.textContent=title+" will be available soon";toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),2200);
 }
-
-// Register the e-Vidhayalay service worker
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("./service-worker.js")
-      .then(() => {
-        console.log("e-Vidhayalay offline service is active.");
-      })
-      .catch((error) => {
-        console.error("Service worker registration failed:", error);
-      });
-  });
-}
